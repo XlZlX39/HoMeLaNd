@@ -919,12 +919,12 @@ end
 if text == 'تحديث السورس ⌯' and SudoBot(msg) then 
 os.execute('rm -rf HoMeLaNd.lua')
 os.execute('wget https://raw.githubusercontent.com/TaEmHoMeLaNd/HoMeLaNd/master/HoMeLaNd.lua')
-send(msg.chat_id_, msg.id_,'⌯︙تم  \n⌯︙لديك اخر اصدار لسورس وطن\n⌯︙الاصدار ← { 1.2v}')
+send(msg.chat_id_, msg.id_,'⌯︙تم  \n⌯︙لديك اخر اصدار لسورس وطن\n⌯︙الاصدار ← { 1.0v }')
 dofile('HoMeLaNd.lua')  
 end
 if text == 'الاصدار ⌯' and SudoBot(msg) then 
 database:del(bot_id..'Srt:Bot') 
-send(msg.chat_id_, msg.id_,'⌯︙اصدار سورس وطن \n⌯︙الاصدار ←{ 1.2v}')
+send(msg.chat_id_, msg.id_,'⌯︙اصدار سورس وطن \n⌯︙الاصدار ←{ 1.0v }')
 end
 if text == "ضع اسم للبوت ⌯" and SudoBot(msg) then  
 database:setex(bot_id..'Set:Name:Bot'..msg.sender_user_id_,300,true) 
@@ -8493,7 +8493,7 @@ send(msg.chat_id_, msg.id_, amer)
 end,nil)
 end,nil)
 end 
-if text == 'اطردني' or text == 'طردني' then
+if text == 'اطردني' or text == 'ادفرني' then
 if not database:get(bot_id..'Cick:Me'..msg.chat_id_) then
 if Can_or_NotCan(msg.sender_user_id_, msg.chat_id_) == true then
 send(msg.chat_id_, msg.id_, '\n⌯︙عذرا لا استطيع طرد ( '..Rutba(msg.sender_user_id_,msg.chat_id_)..' )')
